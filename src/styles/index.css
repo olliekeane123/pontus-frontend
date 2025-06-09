@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@import "./fonts.css";
+@import "./theme.css";
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  text-align: center;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  background-color: #FBF6F4;
+}

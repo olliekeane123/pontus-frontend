@@ -1,0 +1,26 @@
+@theme {
+    /* Primary font stack */
+    --font-primary: "Switzer", sans-serif;
+    --font-logo: "Righteous", sans-serif;
+
+    --font-weight-thin: 100;
+    --font-weight-extralight: 200;
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --font-weight-black: 900;
+
+    --color-text-primary: #272728;
+
+    --color-bg-primary: #FBF6F4;
+    --color-bg-sand: #ECE4DB;
+    --color-bg-grey: #E8E7E3;
+
+    --color-accent-green: #C1D0BF;
+    --color-accent-dark-green: #A8B9A0;
+    --color-accent-brown: #7B7561;
+
+  }
