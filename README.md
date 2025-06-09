@@ -1,55 +1,23 @@
-# React + TypeScript + Vite
+Pontus
+Welcome to Pontus! This application allows you to browse and discover artworks from two prestigious institutions: The Art Institute of Chicago and The Cleveland Museum of Art.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+What You Can Do
+Explore Artworks: Browse a vast collection of artworks from either The Art Institute of Chicago or The Cleveland Museum of Art.
 
-Currently, two official plugins are available:
+Search for Art: Use the search bar to find specific artworks by title, artist, or keywords from the selected museum.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Curate Your Own Collection: Add artworks you love to your personal collection for easy viewing later.
 
-## Expanding the ESLint configuration
+Important Note
+Currently, your saved collection is not persistent. If you close your browser or refresh the page, your added artworks will not be saved. This feature is planned for future development.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+How to Use
+Select a Museum: Use the dropdown menu to choose between "Art Institute of Chicago" and "Cleveland Museum."
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Search: Type a keyword or phrase into the search bar and press Enter or click the "Search" button to filter artworks.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+View Details: Click on any artwork card to see a larger image and more details about the piece.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Add/Remove to Collection: On each artwork card or in the detailed view, you can click the appropriate button to add the artwork to your collection or remove it if it's already there.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
-# pontus-frontend
+Enjoy exploring the world of art!
