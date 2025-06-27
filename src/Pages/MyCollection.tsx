@@ -1,19 +1,17 @@
-// Pages/MyCollection.tsx
 import { useEffect, useState } from "react"
 import Header from "../Components/Header"
 import ArtworkCard from "../Components/ArtworkCard"
 import ArtworkModal from "../Components/ArtworkModal"
-import { useCollection } from "../utils/collectionUtils" // Import the custom hook
+import { useCollection } from "../utils/collectionUtils"
 
 const MyCollection = () => {
-    // Use the custom collection hook
-    const { collection, removeFromCollection } = useCollection() // We don't need setCollection here as useCollection manages it
+
+    const { collection, removeFromCollection } = useCollection()
 
     const [selectedArtwork, setSelectedArtwork] = useState<any>(null)
     const [showModal, setShowModal] = useState<boolean>(false)
 
-    // When the collection changes, if the modal is open and the selected artwork is no longer in the collection, close the modal.
-    // This is good UX to prevent showing a modal for an artwork that's just been removed from this view.
+    
     useEffect(() => {
         if (showModal && selectedArtwork) {
             const isStillInCollection = collection.some(
@@ -30,11 +28,9 @@ const MyCollection = () => {
     const handleRemove = (artwork: any, e: React.MouseEvent) => {
         e.stopPropagation()
         removeFromCollection(artwork.id, artwork.source)
-        // No need to call setCollection(getCollection()) here, useCollection handles state updates.
     }
 
-    // Since the item is being removed from MyCollection, we need to consider closing the modal
-    // after removal to reflect the change visually.
+
     const handleRemoveFromCollectionAndCloseModal = (
         artwork: any,
         e: React.MouseEvent
@@ -69,7 +65,7 @@ const MyCollection = () => {
                                 artwork={artwork}
                                 onArtworkClick={openModal}
                                 onAddToCollection={() => {}} // Not applicable in MyCollection
-                                onRemoveFromCollection={handleRemove} // ArtworkCard calls this
+                                onRemoveFromCollection={handleRemove}
                                 isInCollection={true} // Always true for items displayed here
                             />
                         ))}
@@ -84,7 +80,6 @@ const MyCollection = () => {
                     artwork={selectedArtwork}
                     isOpen={showModal}
                     onClose={closeModal}
-                    // This is the crucial part: dynamically check if the selected artwork is still in the collection
                     isInCollection={
                         selectedArtwork
                             ? collection.some(
@@ -94,10 +89,10 @@ const MyCollection = () => {
                               )
                             : false
                     }
-                    onAddToCollection={() => {}} // Not needed here as you only remove from MyCollection modal
+                    onAddToCollection={() => {}}
                     onRemoveFromCollection={
                         handleRemoveFromCollectionAndCloseModal
-                    } // Use the new handler for modal removal
+                    }
                 />
             </main>
         </>

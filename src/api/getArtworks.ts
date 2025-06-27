@@ -27,7 +27,7 @@ export const getAllArtworks = async (source: string, page: number, searchTerm: s
         } else {
             throw new Error("No artworks found");
         }
-    } catch (error: any) { // Explicitly type error as any for console.error
+    } catch (error: any) {
         console.error("Error fetching artworks:", error.response?.data || error.message);
         throw error;
     }

@@ -33,7 +33,6 @@ const Explore = () => {
         setError(null)
 
         try {
-            // No Harvard-specific term handling needed here anymore
             const response = await getAllArtworks(
                 currentSource,
                 page,
@@ -78,9 +77,8 @@ const Explore = () => {
     const handleSourceChange = (newSource: string) => {
         setSource(newSource)
         setCurrentPage(1)
-        setSearchTerm("") // Clear search term when source changes
-        // No Harvard-specific warning logic needed anymore
-        loadPage(1, "", newSource) // Pass empty search term for initial load after source change
+        setSearchTerm("")
+        loadPage(1, "", newSource)
     }
 
     const handleAddToCollection = (artwork: any, e: React.MouseEvent) => {
@@ -136,10 +134,7 @@ const Explore = () => {
                     isLoading={isLoading}
                     onSearch={handleSearch}
                     onSourceChange={handleSourceChange}
-                    // isSearchDisabled prop is no longer needed here
                 />
-
-                {/* Harvard search warning removed */}
 
                 {error && (
                     <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6">

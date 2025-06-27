@@ -7,7 +7,6 @@ interface SearchFilterBarProps {
     isLoading: boolean;
     onSearch: () => void;
     onSourceChange: (source: string) => void;
-    // isSearchDisabled prop is removed
 }
 
 const SearchFilterBar = ({
@@ -17,7 +16,6 @@ const SearchFilterBar = ({
     isLoading,
     onSearch,
     onSourceChange,
-    // isSearchDisabled is removed from destructuring
 }: SearchFilterBarProps) => {
     return (
         <div className="bg-white rounded-lg shadow-md p-6 mb-8">
@@ -36,7 +34,7 @@ const SearchFilterBar = ({
                             onKeyPress={(e) => e.key === 'Enter' && onSearch()}
                             placeholder="Search artworks, artists, titles..."
                             className="flex-1 px-4 py-2 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                            disabled={isLoading} // No longer disabled specifically for Harvard
+                            disabled={isLoading}
                         />
                         <button
                             onClick={onSearch}
@@ -62,7 +60,6 @@ const SearchFilterBar = ({
                     >
                         <option value="aic">Art Institute of Chicago</option>
                         <option value="cleveland">Cleveland Museum</option>
-                        {/* Harvard Art Museums option removed */}
                     </select>
                 </div>
             </div>
