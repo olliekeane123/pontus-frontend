@@ -68,9 +68,21 @@ Pontus provides a user-friendly interface to browse, search, and collect artwork
 
        npm install
 
-3. Update the backend base URL in `src/api/getArtworks.ts` if necessary:
+3. Configure the backend base URL in `src/api/getArtworks.ts`. You have two options:
 
-       const backendBaseUrl = "http://localhost:8000";  // make sure it points to your local backend
+    - **Option 1:** Directly set the backend URL by replacing the line with:
+
+          const backendBaseUrl = import.meta.env.VITE_BACKEND_BASE_URL;
+
+      with your local backend URL, for example:
+
+          const backendBaseUrl = "http://localhost:8000";
+
+    - **Option 2 (recommended):** Create a `.env.local` file in the root of the frontend project and add the following line to set the backend URL:
+
+          VITE_BACKEND_BASE_URL=http://localhost:8000
+
+      This way, the backend URL can be managed through environment variables without modifying the source code.
 
 4. Start the frontend development server:
 
