@@ -4,11 +4,15 @@ axios.defaults.headers.common["Accept"] = "application/json";
 axios.defaults.headers.common["Content-Type"] = "application/json";
 axios.defaults.timeout = 30000;
 
+const backendBaseUrl = import.meta.env.VITE_BACKEND_BASE_URL;
+
 export const getAllArtworks = async (source: string, page: number, searchTerm: string) => {
     try {
         const encodedSearchTerm = encodeURIComponent(searchTerm);
 
-        const backendBaseUrl = "https://pontus-backend.onrender.com";
+        if (!backendBaseUrl) {
+            throw new Error("Backend base URL is not defined");
+        }
         const url = `${backendBaseUrl}/api/artworks/${source}`;
 
         const params = new URLSearchParams();
