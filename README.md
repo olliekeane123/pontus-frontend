@@ -47,7 +47,7 @@ Pontus provides a user-friendly interface to browse, search, and collect artwork
 
 3. Start the backend server locally (default port: 8000):
 
-       npm run start
+       npm run dev
 
 4. Confirm the backend is running by visiting:
 
